@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            
+            body{
+
+background-color:rgb(255,255,255);
+
+
+            }
+           
+            marquee{
+
+                font-size:40px:
+            }
+            
+            </style>
+
+        <script>
+document.addEventListener('DOMContentLoaded', () => {
+
+               
+ document.querySelector('#submit').disabled = true;
+
+                
+ document.querySelector('#ah').onkeyup = () => {
+  document.querySelector('#submit').disabled = false;
+ };
+
+ document.querySelector('#fun').onsubmit = () => {
+
+ const li = document.createElement('li');
+ li.innerHTML = document.querySelector('#ah').value;
+
+                    
+ document.querySelector('#tasks').append(li);
+
+document.querySelector('#ah').value = '';
+ document.querySelector('#submit').disabled = true;
+
+                    
+ return false;
+};
+
+ });
+ 
+ 
+
+
+        </script>
+        <title>student attendnce list</title>
+    </head>
+    <body>
+        <header><caption><marquee direction="right" > welcome to student attendence menu now you can inter student name in list</marquee></caption></header>
+        <h1><em>student attendence list </em></h1>
+        <ol id="tasks">
+        </ol>
+        <form id="fun">
+            <input id="ah"  autofocus placeholder="student name " title="student name">
+            <button id="submit" id="button">click to enter</button>
+        </form>
+    </body>
+</html>
